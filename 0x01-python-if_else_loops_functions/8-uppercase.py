@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 def uppercase(str):
+    if not str:
+        print()
+        return
+
     for i in range(0, len(str)):
         if str[i] >= 'a' and str[i] <= 'z':
             ascii = ord(str[i])
