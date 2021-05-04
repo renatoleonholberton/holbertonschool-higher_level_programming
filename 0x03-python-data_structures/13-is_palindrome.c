@@ -20,7 +20,10 @@ int is_palindrome(listint_t **head)
 	for (curr = *head; curr != NULL; curr = curr->next)
 	{
 		if (curr->n != rev_curr->n)
+		{
+			free_listint(rev_head);
 			return (0);
+		}
 		rev_curr = rev_curr->next;
 	}
 
