@@ -8,53 +8,32 @@
 */
 int is_palindrome(listint_t **head)
 {
-	listint_t *rev_head = NULL, *rev_curr, *curr;
+	listint_t *start;
 
 	if (head == NULL || *head == NULL)
 		return (1);
 
-	for (curr = *head; curr != NULL; curr = curr->next)
-		add_nodeint(&rev_head, curr->n);
-
-	rev_curr = rev_head;
-	for (curr = *head; curr != NULL; curr = curr->next)
-	{
-		if (curr->n != rev_curr->n)
-		{
-			free_listint(rev_head);
-			return (0);
-		}
-		rev_curr = rev_curr->next;
-	}
-
-	free_listint(rev_head);
-	return (1);
+	start = *head;
+	return (check_palindrome(&start, start));
 }
 
 /**
- * add_nodeint - Adds a node at the start
- * @head: Double pointer to head node
- * @n: New node's data value
+ * check_palindrome - Check if a list is a palindrome
+ * @start: Double pointer to head node
+ * @end: Pointer to compare with start
  *
- * Return: Pointer to hte newly created node
+ * Return: 1 if the list is palindrome, 0 otherwise
 */
-listint_t *add_nodeint(listint_t **head, const int n)
+int check_palindrome(listint_t **start, listint_t *end)
 {
-	listint_t *new_node;
+	int res = 1;
 
-	if (head == NULL)
-		return (NULL);
+	if (end == NULL)
+		return (1);
 
-	new_node = malloc(sizeof(*new_node));
-	if (new_node == NULL)
-		return (NULL);
+	res = check_palindrome(start, end->next);
+	res = res && ((*start)->n == end->n);
+	*start = (*start)->next;
 
-	new_node->n = n;
-	new_node->next = NULL;
-
-	if (*head != NULL)
-		new_node->next = *head;
-	*head = new_node;
-
-	return (new_node);
+	return (res);
 }
