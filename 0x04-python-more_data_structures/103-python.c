@@ -9,7 +9,7 @@ void print_python_list(PyObject *p)
 {
 	PyObject *item;
 	PyListObject *list = (PyListObject *)p;
-	int i, size = PySequence_Length(p);
+	int i, size = ((PyVarObject *)p)->ob_size;
 
 	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %d\n", size);
