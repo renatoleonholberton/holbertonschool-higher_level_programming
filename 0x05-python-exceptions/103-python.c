@@ -5,9 +5,13 @@ void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
 void print_python_float(PyObject *p);
 
+/**
+ * print_python_list - Prints ifno about lists object
+ * @p: PyObject as argument
+*/
 void print_python_list(PyObject *p)
 {
-	int i ,size, allocated;
+	int i, size, allocated;
 	PyListObject *list;
 	PyObject **items, *item;
 
@@ -34,10 +38,14 @@ void print_python_list(PyObject *p)
 		if (PyBytes_Check(item))
 			print_python_bytes(item);
 		else if (PyFloat_Check(item))
-			print_python_float(item);		
+			print_python_float(item);
 	}
 }
 
+/**
+ * print_python_bytes - Prints ifno about Bytes object
+ * @p: PyObject as argument
+*/
 void print_python_bytes(PyObject *p)
 {
 	int i, size, c, first_bytes;
@@ -50,7 +58,7 @@ void print_python_bytes(PyObject *p)
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
-	
+
 	size = ((PyVarObject *)p)->ob_size;
 	str = ((PyBytesObject *) p)->ob_sval;
 	first_bytes = size > 10 ? 9 : size;
@@ -72,6 +80,10 @@ void print_python_bytes(PyObject *p)
 	printf("\n");
 }
 
+/**
+ * print_python_float - Prints ifno about Float object
+ * @p: PyObject as argument
+*/
 void print_python_float(PyObject *p)
 {
 	float val;
