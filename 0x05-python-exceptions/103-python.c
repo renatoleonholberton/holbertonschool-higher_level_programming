@@ -85,5 +85,8 @@ void print_python_float(PyObject *p)
 	}
 
 	val = ((PyFloatObject *) p)->ob_fval;
-	printf("  value: %f\n", val);	
+	printf("  value: %g", val);
+	if (val - ((int) val) == 0)
+		printf(".0");
+	printf("\n");
 }
