@@ -75,7 +75,7 @@ void print_python_bytes(PyObject *p)
 		if (c < 0)
 			c += 1 << 8;
 
-		printf("%02x", c);
+		printf("%.2x", c);
 		if (i < first_bytes)
 			printf(" ");
 		fflush(stdout);
