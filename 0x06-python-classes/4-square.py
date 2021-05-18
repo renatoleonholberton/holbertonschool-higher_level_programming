@@ -1,13 +1,23 @@
 #!/usr/bin/python3
+"""Simple Square class"""
+
+
 class Square:
+    """Simple class with attrs validation.
+
+    Args:
+        size (int): Size of the square
+    """
     def __init__(self, size=0):
         self.__size = size
 
     def area(self):
+        """Method to calculate the area of the square"""
         return self.__size ** 2
 
     @property
     def size(self):
+        """size: property to modify private __size attr"""
         return self.__size
 
     @size.setter
