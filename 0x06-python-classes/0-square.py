@@ -2,5 +2,5 @@
 """This script contains an empty class"""
 
 class Square:
-    """Square class"""
+    """This is an example of an empty class"""
     pass
