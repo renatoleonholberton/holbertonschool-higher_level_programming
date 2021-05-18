@@ -1,6 +1,6 @@
 #!/usr/bin/python3
+"""This script contains an empty class"""
+
 class Square:
-    """
-    This is an empty class
-    """
+    """Square class"""
     pass
