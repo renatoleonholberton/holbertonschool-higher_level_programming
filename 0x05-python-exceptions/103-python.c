@@ -74,7 +74,7 @@ void print_python_bytes(PyObject *p)
 
 	for (i = 0; i <= first_bytes; i++)
 	{
-		printf("%.2hhx", bytes_obj->ob_sval[i]);
+		printf("%02hhx", bytes_obj->ob_sval[i]);
 		if (i < first_bytes)
 			printf(" ");
 	}
