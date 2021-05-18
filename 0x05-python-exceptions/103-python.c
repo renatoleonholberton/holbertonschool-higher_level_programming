@@ -87,6 +87,7 @@ void print_python_bytes(PyObject *p)
 void print_python_float(PyObject *p)
 {
 	double val;
+	char *str_val;
 
 	printf("[.] float object info\n");
 
@@ -97,5 +98,8 @@ void print_python_float(PyObject *p)
 	}
 
 	val = ((PyFloatObject *) p)->ob_fval;
-	printf("  value: %s\n", PyOS_double_to_string(val, 'r', 0, Py_DTSF_ADD_DOT_0, NULL));
+	str_val = PyOS_double_to_string(val, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
+
+	printf("  value: %s\n", str_val);
+	PyMem_Free(str_val);
 }
