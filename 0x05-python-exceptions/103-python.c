@@ -50,7 +50,6 @@ void print_python_list(PyObject *p)
 void print_python_bytes(PyObject *p)
 {
 	Py_ssize_t i, size, first_bytes;
-	int c;
 	char *str;
 
 	setbuf(stdout, NULL);
@@ -72,11 +71,7 @@ void print_python_bytes(PyObject *p)
 
 	for (i = 0; i <= first_bytes; i++)
 	{
-		c = str[i];
-		if (c < 0)
-			c += 1 << 8;
-
-		printf("%.2x", c);
+		printf("%.2hhx", str[i]);
 		if (i < first_bytes)
 			printf(" ");
 	}
