@@ -60,7 +60,9 @@ class SinglyLinkedList:
     def __str__(self):
         str_ls = ""
         curr = self.__head
+        n = ""
         while curr is not None:
-            str_ls += str(curr.data) + "\n"
+            str_ls += str(curr.data) + n
+            n = "\n"
             curr = curr.next_node
-        return str_ls[:-1]
+        return str_ls
