@@ -15,6 +15,8 @@ void print_python_list(PyObject *p)
 	PyListObject *list;
 	PyObject **items, *item;
 
+	fflush(stdout);
+
 	printf("[*] Python list info\n");
 
 	if (!PyList_Check(p))
@@ -51,6 +53,8 @@ void print_python_bytes(PyObject *p)
 	Py_ssize_t i, size, first_bytes;
 	int c;
 	char *str;
+
+	fflush(stdout);
 
 	printf("[.] bytes object info\n");
 
@@ -89,6 +93,8 @@ void print_python_float(PyObject *p)
 {
 	double val;
 	char *str_val;
+
+	fflush(stdout);
 
 	printf("[.] float object info\n");
 
