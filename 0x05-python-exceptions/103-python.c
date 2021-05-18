@@ -15,6 +15,7 @@ void print_python_list(PyObject *p)
 	PyListObject *list;
 	PyObject **items, *item;
 
+	setbuf(stdout, NULL);
 	printf("[*] Python list info\n");
 
 	if (!PyList_Check(p))
@@ -52,6 +53,7 @@ void print_python_bytes(PyObject *p)
 	int c;
 	char *str;
 
+	setbuf(stdout, NULL);
 	printf("[.] bytes object info\n");
 
 	if (!PyBytes_Check(p))
@@ -67,7 +69,6 @@ void print_python_bytes(PyObject *p)
 	printf("  size: %ld\n", size);
 	printf("  trying string: %s\n", str);
 	printf("  first %ld bytes: ", first_bytes + 1);
-	fflush(stdout);
 
 	for (i = 0; i <= first_bytes; i++)
 	{
@@ -78,7 +79,6 @@ void print_python_bytes(PyObject *p)
 		printf("%.2x", c);
 		if (i < first_bytes)
 			printf(" ");
-		fflush(stdout);
 	}
 	printf("\n");
 }
@@ -92,6 +92,7 @@ void print_python_float(PyObject *p)
 	double val;
 	char *str_val;
 
+	setbuf(stdout, NULL);
 	printf("[.] float object info\n");
 
 	if (!PyFloat_Check(p))
