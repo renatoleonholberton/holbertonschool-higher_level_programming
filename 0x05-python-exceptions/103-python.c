@@ -87,7 +87,7 @@ void print_python_bytes(PyObject *p)
 */
 void print_python_float(PyObject *p)
 {
-	char *str_val;
+	char *str_val = NULL;
 	PyFloatObject *float_obj;
 
 	fflush(stdout);
