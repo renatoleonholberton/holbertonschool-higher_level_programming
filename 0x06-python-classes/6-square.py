@@ -1,13 +1,24 @@
 #!/usr/bin/python3
+"""Simple Square class"""
+
+
 class Square:
+    """Simple class with attrs validation.
+
+    Args:
+        size (int): Size of the square
+        position (int): Position at which to display the square
+    """
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
         self.__position = position
 
     def area(self):
+        """Method to calculate the area of the square"""
         return self.__size ** 2
 
     def my_print(self):
+        """This function prints the square using '#' chars"""
         if self.__size == 0:
             print()
         else:
@@ -19,6 +30,7 @@ class Square:
 
     @property
     def size(self):
+        """size: property to modify private __size attr"""
         return self.__size
 
     @size.setter
@@ -32,6 +44,7 @@ class Square:
 
     @property
     def position(self):
+        """position: property to modify private __position attr"""
         return self.__position
 
     @position.setter
