@@ -61,7 +61,7 @@ class SinglyLinkedList:
         str_ls = ""
         curr = self.__head
         if curr is None:
-            str_ls = "\n"
+            return ""
         while curr is not None:
             str_ls += str(curr.data) + "\n"
             curr = curr.next_node
