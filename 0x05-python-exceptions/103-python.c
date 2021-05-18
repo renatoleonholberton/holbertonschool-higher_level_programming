@@ -11,7 +11,7 @@ void print_python_float(PyObject *p);
 */
 void print_python_list(PyObject *p)
 {
-	long int i, size, allocated;
+	Py_ssize_t i, size, allocated;
 	PyListObject *list;
 	PyObject **items, *item;
 
@@ -48,7 +48,7 @@ void print_python_list(PyObject *p)
 */
 void print_python_bytes(PyObject *p)
 {
-	long int i, size, first_bytes;
+	Py_ssize_t i, size, first_bytes;
 	int c;
 	char *str;
 
