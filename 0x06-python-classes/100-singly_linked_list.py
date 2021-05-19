@@ -56,13 +56,11 @@ class SinglyLinkedList:
             new_node.next_node = self.__head
             self.__head = new_node
         else:
-            prev = None
             curr = self.__head
-            while curr is not None and curr.data < value:
-                prev = curr
+            while curr.next_node is not None and curr.next_node.data < value:
                 curr = curr.next_node
-            new_node.next_node = curr
-            prev.next_node = new_node
+            new_node.next_node = curr.next_node
+            curr.next_node = new_node
 
     def __str__(self):
         """Print a string representationof a list
