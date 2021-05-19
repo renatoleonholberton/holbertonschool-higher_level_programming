@@ -3,13 +3,14 @@
 
 
 class Node:
-    """Simple class with attrs validation.
-
-    Args:
-        data (int): Node's data
-        next_node (Node): Pointer to next node
-    """
+    """Simple class with attrs validation"""
     def __init__(self, data, next_node=None):
+        """Init method
+
+        Args:
+            data (int): Node's data
+            next_node (Node): Pointer to next node
+        """
         self.data = data
         self.next_node = next_node
 
@@ -42,7 +43,11 @@ class SinglyLinkedList:
         self.__head = None
 
     def sorted_insert(self, value):
-        """Method to insert a node in correct order"""
+        """Method to insert a node in correct order
+        
+        Args:
+            value (int): New node's data
+        """
         new_node = Node(value, None)
 
         if self.__head is None:
@@ -58,6 +63,11 @@ class SinglyLinkedList:
             prev.next_node = new_node
 
     def __str__(self):
+        """Print a string representationof a list
+        
+        Returns:
+            String representation of list
+        """
         str_arr = []
         curr = self.__head
         while curr is not None:
