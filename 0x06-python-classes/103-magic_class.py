@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-import math
-
 """MagiClass declaration"""
 
 
@@ -22,8 +20,8 @@ class MagicClass:
 
     def area(self):
         """area: Calculates the area"""
-        return (self.__radius ** 2) * math.pi
+        return (self.__radius ** 2)
 
     def circumference(self):
         """circumference: Calculates the circumference"""
-        return 2 * math.pi * self.__radius
+        return 2 * self.__radius
