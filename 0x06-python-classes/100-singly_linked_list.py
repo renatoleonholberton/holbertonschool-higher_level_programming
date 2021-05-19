@@ -60,8 +60,6 @@ class SinglyLinkedList:
     def __str__(self):
         str_arr = []
         curr = self.__head
-        if curr is None:
-            return ""
         while curr is not None:
             str_arr.append(str(curr.data))
             curr = curr.next_node
