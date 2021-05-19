@@ -1,6 +1,4 @@
 #include <Python.h>
-#include <stdio.h>
-#include <string.h>
 
 void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
@@ -20,7 +18,7 @@ void print_python_list(PyObject *p)
 
 	printf("[*] Python list info\n");
 
-	if (strcmp(p->ob_type->tp_name, "list") != 0)
+	if (!PyList_Check(p))
 	{
 		printf("  [ERROR] Invalid List Object\n");
 		return;
@@ -58,7 +56,7 @@ void print_python_bytes(PyObject *p)
 
 	printf("[.] bytes object info\n");
 
-	if (strcmp(p->ob_type->tp_name, "bytes") != 0)
+	if (!PyBytes_Check(p))
 	{
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
@@ -94,7 +92,7 @@ void print_python_float(PyObject *p)
 
 	printf("[.] float object info\n");
 
-	if (strcmp(p->ob_type->tp_name, "float") != 0)
+	if (!PyFloat_Check(p))
 	{
 		printf("  [ERROR] Invalid Float Object\n");
 		return;
