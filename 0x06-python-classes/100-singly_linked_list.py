@@ -58,11 +58,11 @@ class SinglyLinkedList:
             prev.next_node = new_node
 
     def __str__(self):
-        str_ls = ""
+        str_arr = []
         curr = self.__head
         if curr is None:
             return ""
         while curr is not None:
-            str_ls += str(curr.data) + "\n"
+            str_arr.append(str(curr.data))
             curr = curr.next_node
-        return str_ls[:-1]
+        return "\n".join(str_arr)
