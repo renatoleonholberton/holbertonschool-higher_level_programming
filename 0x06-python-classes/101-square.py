@@ -34,7 +34,7 @@ class Square:
             for _ in rang:
                 str_rep = str_rep + ' ' * self.__position[0]
                 str_rep = str_rep + '#' * self.__size + "\n"
-        return str_rep
+        return str_rep[:-1]
 
     @property
     def size(self):
@@ -63,3 +63,15 @@ class Square:
             raise TypeError('position must be a tuple of 2 positive integers')
 
         self.__position = value
+
+
+
+
+
+my_square = Square(5, (0, 0))
+print(my_square)
+
+print("--")
+
+my_square = Square(5, (4, 1))
+print(my_square)
