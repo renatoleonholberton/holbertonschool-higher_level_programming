@@ -44,7 +44,7 @@ class SinglyLinkedList:
 
     def sorted_insert(self, value):
         """Method to insert a node in correct order
-        
+
         Args:
             value (int): New node's data
         """
@@ -64,7 +64,7 @@ class SinglyLinkedList:
 
     def __str__(self):
         """Print a string representationof a list
-        
+
         Returns:
             String representation of list
         """
