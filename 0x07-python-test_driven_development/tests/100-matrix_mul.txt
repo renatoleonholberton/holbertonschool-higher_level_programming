@@ -60,6 +60,7 @@ Handling not allowed arguments
 	>>> b = [[1, 2],[3, 4]]
 	>>> matrix_mul(a, b)
 	Traceback (most recent call last):
+		...
 	ValueError: m_a can't be empty
 
 	>>> b = []
@@ -84,6 +85,7 @@ Handling not allowed arguments
 	>>> b = [[1, 2],[3, 4]]
 	>>> matrix_mul(a, b)
 	Traceback (most recent call last):
+		...
 	ValueError: m_a can't be empty
 
 	>>> a = [[1, 2.456],[2, 3.27386]]
@@ -248,6 +250,7 @@ Handling not allowed arguments
 
 	 >>> matrix_mul([[], []], [[1, 2], [3, 4]])
 	 Traceback (most recent call last):
+	 	...
 	 ValueError: m_a can't be empty
 
 Test 2 bad matrices:
@@ -261,16 +264,16 @@ Test 2 ok matrices:
     [[19, 22, 5], [43, 50, 11], [43, 50, 11]]
 
 Test singly empty matrix:
-    >>> matrix_mul([], [[3]])
-    Traceback (most recent call last):
-    ...
-    ValueError: m_a can't be empty
+>>> matrix_mul([], [[3]])
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
 
 Test singly empty matrix:
-    >>> matrix_mul([[]], [[3]])
-    Traceback (most recent call last):
-    ...
-    ValueError: m_a can't be empty
+>>> matrix_mul([[]], [[3]])
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
 
 Test singly empty matrix 2:
     >>> matrix_mul([[4]], [])
