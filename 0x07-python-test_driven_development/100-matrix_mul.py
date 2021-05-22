@@ -3,7 +3,7 @@
 
 
 def matrix_mul(m_a, m_b):
-    """matrix_divided: divides all elemetns of matrix by 'div'
+    """matrix_mul: divides all elemetns of matrix by 'div'
 
     Args:
         m_a (list): Matrix A
