@@ -1,0 +1,35 @@
+======================
+The ``say_my_name`` module
+======================
+
+Using ``say_my_name``
+-------------------
+
+Write a function that multiplies 2 matrices:
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Documentation
+=============
+Here we verify if our modules an funtions are documented, for holberton requirements is a must.
+we use __doc__ to verify module's and function's Documentation
+
+    >>> module_doc = __import__("3-say_my_name").__doc__
+    >>> print(len(module_doc) > 0)
+    True
+
+    >>> funciont_doc = __import__("3-say_my_name").say_my_name.__doc__
+    >>> print(len(funciont_doc) > 0)
+    True
+
+General usage
+==============
+
+	>>> say_my_name('John', 'Smith')
+	My name is John Smith
+
+	>>> say_my_name('Walter', 'White')
+	My name is Walter White
+
+	>>> say_my_name('Bob')
+	My name is Bob 
