@@ -12,6 +12,3 @@ def lazy_matrix_mul(m_a, m_b):
     import numpy
 
     return numpy.matmul(m_a, m_b)
-
-print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
-print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
