@@ -47,6 +47,8 @@ class Rectangle:
 
     def __str__(self):
         """Prints the rectangle to stdout using #"""
+        if self.width == 0 or self.height == 0:
+            return ''
         rstr = ''
         for _ in range(self.__height):
             rstr += ('#' * self.width) + '\n'
