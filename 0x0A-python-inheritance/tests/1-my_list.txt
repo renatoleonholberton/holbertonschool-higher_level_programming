@@ -59,9 +59,17 @@ Now use it:
 	>>> print(my_list)
 	[1, 4, 3, 5]
 
-
 	>>> my_list[2] = 2
 	>>> print(my_list)
 	[1, 4, 2, 5]
+
+	>>> my_list = MyList([1, 'hello', 3, True])
+	>>> print(my_list)
+	[1, 'hello', 3, True]
+
+	>>> my_list.print_sorted()
+	Traceback (most recent call last):
+		...	
+	TypeError: unorderable types: str() < int()
 
 
