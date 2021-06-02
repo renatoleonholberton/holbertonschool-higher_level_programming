@@ -96,3 +96,13 @@ Now use it:
 	Traceback (most recent call last):
 		...
 	TypeError: set must be an integer
+
+	>>> bg.integer_validator('dict', {'a': 1, 'b': 2})
+	Traceback (most recent call last):
+		...
+	TypeError: dict must be an integer
+
+	>>> bg.integer_validator('bool', True)
+	Traceback (most recent call last):
+		...
+	TypeError: bool must be an integer
