@@ -67,3 +67,6 @@ Now use it:
 	TypeError: 123 must be an integer
 
 	>>> bg = BaseGeometry(None)
+	Traceback (most recent call last):
+		...
+	TypeError: object() takes no parameters
