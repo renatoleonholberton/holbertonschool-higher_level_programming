@@ -72,4 +72,7 @@ Now use it:
 		...	
 	TypeError: unorderable types: str() < int()
 
-
+	>>> my_list = MyList(None)
+	Traceback (most recent call last):
+		...	
+	TypeError: 'NoneType' object is not iterable
