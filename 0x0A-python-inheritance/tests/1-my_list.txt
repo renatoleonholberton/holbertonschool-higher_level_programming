@@ -54,8 +54,14 @@ Now use it:
 	Traceback (most recent call last):
 		...
 	TypeError: print_sorted() takes 1 positional argument but 2 were given
-	
-	Traceback (most recent call last):
-		...
-	TypeError: b must be an integer
+
+	>>> my_list.remove(2)
+	>>> print(my_list)
+	[1, 4, 3, 5]
+
+
+	>>> my_list[2] = 2
+	>>> print(my_list)
+	[1, 4, 2, 5]
+
 
