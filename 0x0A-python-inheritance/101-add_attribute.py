@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module with class definition"""
+"""Module with function definition"""
 
 
 def add_attribute(obj, attr_name, value):
