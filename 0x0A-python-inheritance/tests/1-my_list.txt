@@ -76,3 +76,8 @@ Now use it:
 	Traceback (most recent call last):
 		...	
 	TypeError: 'NoneType' object is not iterable
+
+	>>> my_list = MyList([1, 2, 3], [1, 2, 3])
+	Traceback (most recent call last):
+		...	
+	TypeError: list() takes at most 1 argument (2 given)
