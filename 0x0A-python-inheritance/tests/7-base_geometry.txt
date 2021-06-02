@@ -56,3 +56,8 @@ Now use it:
 	Traceback (most recent call last):
 		...
 	Exception: area() is not implemented
+
+	>>> bg = BaseGeometry(2)
+	Traceback (most recent call last):
+		...
+	TypeError: object() takes no parameters
