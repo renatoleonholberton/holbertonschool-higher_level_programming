@@ -31,6 +31,14 @@ Now use it:
 	>>> print(my_list)
 	[1, 4, 2, 3, 5]
 
+	>>> print(my_list[1])
+	4
+
+	>>> print(my_list[5])
+	Traceback (most recent call last):
+		...
+	IndexError: list index out of range
+
 	
 	Traceback (most recent call last):
 		...
