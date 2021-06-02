@@ -3,6 +3,7 @@
 
 
 class MyInt(int):
+    """Class that inherits from int"""
     def __eq__(self, other_val):
         return super().__ne__(other_val)
 
