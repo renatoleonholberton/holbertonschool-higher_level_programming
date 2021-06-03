@@ -1,23 +1,19 @@
 #!/usr/bin/python3
 """Module for function definition"""
-from os import stat
 from sys import stdin
 
 
 count = 0
 size = 0
 n_stat = 0
-stats = dict()
-summary_last_10 = dict()
+status_codes_metrics = dict()
 
 
-def print_stats(stats):
+def print_stats(size, metrics):
     """Print stats"""
-    for key in sorted(stats.keys()):
-        print('File size:', stats[key]['size'])
-        inner_stats = stats[key]['stats']
-        for sts_code in sorted(inner_stats.keys()):
-            print("{}: {}".format(sts_code, inner_stats[sts_code]))
+    print('File size:', size)
+    for key in sorted(metrics.keys()):
+        print("{}: {}".format(key, metrics[key]))
 
 
 try:
@@ -27,19 +23,11 @@ try:
         status_code = line_ls[7]
         size += int(line_ls[-1])
 
-        if status_code not in summary_last_10:
-            summary_last_10[status_code] = 0
-        summary_last_10[status_code] += 1
+        if status_code not in status_codes_metrics:
+            status_codes_metrics[status_code] = 0
+        status_codes_metrics[status_code] += 1
 
         if count % 10 == 0:
-            store = {
-                "size": size,
-                "stats": summary_last_10
-            }
-            stats[n_stat] = store
-            summary_last_10 = dict()
-            n_stat += 1
-
-            print_stats(stats)
+            print_stats(size, status_codes_metrics)
 finally:
-    print_stats(stats)
+    print_stats(size, status_codes_metrics)
