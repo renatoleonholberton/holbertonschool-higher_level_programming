@@ -8,4 +8,5 @@ def append_after(filename="", search_string="", new_string=""):
         lines = file.readlines()
         for ind, line in enumerate(lines):
             if search_string in line:
-                lines[ind] += "\n{}\n".format(new_string)
+                lines[ind] += "{}".format(new_string)
+        file.write("".join(lines))
