@@ -10,6 +10,16 @@ n_stat = 0
 stats = dict()
 summary_last_10 = dict()
 
+
+def print_stats(stats):
+    """Print stats"""
+    for key in sorted(stats.keys()):
+        print('File size:', stats[key]['size'])
+        inner_stats = stats[key]['stats']
+        for sts_code in sorted(inner_stats.keys()):
+            print("{}: {}".format(sts_code, inner_stats[sts_code]))
+
+
 try:
     for line in stdin:
         count += 1
@@ -29,9 +39,7 @@ try:
             stats[n_stat] = store
             summary_last_10 = dict()
             n_stat += 1
+
+            print_stats(stats)
 finally:
-    for key in sorted(stats.keys()):
-        print('File size:', stats[key]['size'])
-        inner_stats = stats[key]['stats']
-        for sts_code in sorted(inner_stats.keys()):
-            print("{}: {}".format(sts_code, inner_stats[sts_code]))
+    print_stats(stats)
