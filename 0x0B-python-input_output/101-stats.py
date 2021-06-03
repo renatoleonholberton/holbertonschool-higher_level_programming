@@ -21,13 +21,18 @@ try:
     for line in stdin:
         count += 1
         line_ls = line.split(' ')
-        status_code = line_ls[7]
-        size += int(line_ls[-1])
 
-        if status_code in valid_status_codes:
-            if status_code not in status_codes_metrics:
-                status_codes_metrics[status_code] = 0
-            status_codes_metrics[status_code] += 1
+        try:
+            status_code = line_ls[7]
+            size += int(line_ls[-1])
+
+            if status_code in valid_status_codes:
+                if status_code not in status_codes_metrics:
+                    status_codes_metrics[status_code] = 0
+                status_codes_metrics[status_code] += 1
+        except:
+            pass
+
 
         if count % 10 == 0:
             print_stats(size, status_codes_metrics)
