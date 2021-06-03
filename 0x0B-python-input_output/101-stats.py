@@ -25,13 +25,14 @@ try:
         if count % 10 == 0:
             store = {
                 "size": size,
-                "stats": json.dumps(summary_last_10, sort_keys=True)}
+                "stats": summary_last_10
+            }
             stats[n_stat] = store
             summary_last_10 = dict()
             n_stat += 1
 except KeyboardInterrupt:
     for key in stats:
         print('File size:', stats[key]['size'])
-        sts = json.loads(stats[key]['stats'])
-        for sts_code in sts:
-            print("{}: {}".format(sts_code, sts[sts_code]))
+        inner_stats = stats[key]['stats']
+        for sts_code in sorted(inner_stats.keys()):
+            print("{}: {}".format(sts_code, inner_stats[sts_code]))
