@@ -31,7 +31,7 @@ try:
             summary_last_10 = dict()
             n_stat += 1
 except KeyboardInterrupt:
-    for key in stats:
+    for key in sorted(stats.keys):
         print('File size:', stats[key]['size'])
         inner_stats = stats[key]['stats']
         for sts_code in sorted(inner_stats.keys()):
