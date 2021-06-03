@@ -31,6 +31,5 @@ try:
 
         if count % 10 == 0:
             print_stats(size, status_codes_metrics)
-    print_stats(size, status_codes_metrics)
 finally:
     print_stats(size, status_codes_metrics)
