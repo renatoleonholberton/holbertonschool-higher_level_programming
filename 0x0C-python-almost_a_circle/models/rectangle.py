@@ -88,10 +88,17 @@ class Rectangle(Base):
             print(' ' * self.x, end="")
             print('#' * self.width)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Updates instance attributes"""
-        for attr, value in zip(['id', 'width', 'height', 'x', 'y'], args):
-            self.__setattr__(attr, value)
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        if len(args) > 0:
+            for attr, value in zip(attrs, args):
+                self.__setattr__(attr, value)
+            return
+
+        if kwargs is not None:
+            for key, value in kwargs.items():
+                self.__setattr__(key, value)
 
     def __str__(self):
         return '[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}'\
