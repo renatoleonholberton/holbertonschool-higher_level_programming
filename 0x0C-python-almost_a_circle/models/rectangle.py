@@ -75,3 +75,7 @@ class Rectangle(Base):
         self.__validate_type('y', value, int)
         self.__validate_ge0('y', value)
         self.__y = value
+
+    def area(self):
+        """Calculates and returns the rectangle's area"""
+        return self.width * self.height
