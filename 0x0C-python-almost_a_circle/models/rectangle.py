@@ -13,6 +13,21 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def __validate_type(self, attr_name, value, _type):
+        """Validates attr type"""
+        if type(value) is not _type:
+            raise TypeError('{} must be an integer'.format(attr_name))
+
+    def __validate_gt0(self, attr_name, value):
+        """Validates if attr value is greater than 0"""
+        if value <= 0:
+            raise ValueError('{} must be > 0'.format(attr_name))
+
+    def __validate_ge0(self, attr_name, value):
+        """Validates if attr value is greater than or equal to 0"""
+        if value < 0:
+            raise ValueError('{} must be >= 0'.format(attr_name))
+
     @property
     def width(self):
         """width property getter"""
@@ -21,6 +36,8 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """width property setter"""
+        self.__validate_type('width', value, int)
+        self.__validate_gt0('width', value)
         self.__width = value
 
     @property
@@ -31,6 +48,8 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """height property setter"""
+        self.__validate_type('height', value, int)
+        self.__validate_gt0('height', value)
         self.__height = value
 
     @property
@@ -41,6 +60,8 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """x property setter"""
+        self.__validate_type('x', value, int)
+        self.__validate_ge0('x', value)
         self.__x = value
 
     @property
@@ -51,4 +72,6 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """y property setter"""
+        self.__validate_type('y', value, int)
+        self.__validate_ge0('y', value)
         self.__y = value
