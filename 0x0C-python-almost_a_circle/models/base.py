@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Module of base class"""
+import os
 import json
 
 
@@ -26,6 +27,21 @@ class Base:
         filename = '{}.json'.format(cls.__name__)
         with open(filename, mode='w', encoding='utf-8') as file:
             file.write(json_str)
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        filename = '{}.json'.format(cls.__name__)
+        if not os.path.exists('./{}'.format(filename)):
+            return []
+
+        with open(filename, mode='r', encoding='utf-8') as file:
+            json_dicts_list = file.read()
+
+        return list(
+            map(lambda _dict: cls.create(**_dict),
+                cls.from_json_string(json_dicts_list))
+        )
 
     @classmethod
     def create(cls, **dictionary):
