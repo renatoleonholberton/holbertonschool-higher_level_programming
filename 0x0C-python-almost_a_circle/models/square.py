@@ -27,6 +27,12 @@ class Square(Rectangle):
         valid_attrs = ['id', 'size', 'x', 'y']
         self._protected_update(valid_attrs, *args, **kwargs)
 
+    def to_dictionary(self):
+        """Returns a dictionary containing attributes listed
+        in 'valid_attrs'"""
+        valid_attrs = ['id', 'size', 'x', 'y']
+        return self._protected_to_dictionary(valid_attrs)
+
     def __str__(self):
         return '[Square] ({:d}) {:d}/{:d} - {:d}'\
             .format(self.id, self.x, self.y, self.width)
