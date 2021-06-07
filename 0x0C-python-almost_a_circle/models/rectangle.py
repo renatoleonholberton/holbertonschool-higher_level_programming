@@ -104,6 +104,20 @@ class Rectangle(Base):
         valid_attrs = ['id', 'width', 'height', 'x', 'y']
         self._protected_update(valid_attrs, *args, **kwargs)
 
+    def _protected_to_dictionary(self, valid_attrs):
+        """Creates a dictionay with keys as valid_attrs from __dict__"""
+        attrs_to_dict = dict()
+        for attr in valid_attrs:
+            attrs_to_dict.update({attr: self.__getattribute__(attr)})
+
+        return attrs_to_dict
+
+    def to_dictionary(self):
+        """Returns a dictionary containing attributes listed
+        in 'valid_attrs'"""
+        valid_attrs = ['id', 'width', 'height', 'x', 'y']
+        return self._protected_to_dictionary(valid_attrs)
+
     def __str__(self):
         return '[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}'\
             .format(self.id, self.x, self.y, self.width, self.height)
