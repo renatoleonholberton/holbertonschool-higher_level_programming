@@ -32,6 +32,7 @@ class Base:
         """Returns the JSON representation of a list dictionary"""
         if list_dictionaries is None:
             return json.dumps([])
+
         return json.dumps(list_dictionaries)
 
     @staticmethod
@@ -40,4 +41,5 @@ class Base:
         JSON representation"""
         if json_string is None or json_string == '':
             return []
+
         return json.loads(json_string)
