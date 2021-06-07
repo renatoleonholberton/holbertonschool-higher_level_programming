@@ -89,7 +89,7 @@ class Rectangle(Base):
             print('#' * self.width)
 
     def _protected_update(self, valid_attrs, *args, **kwargs):
-        """Updates the instance attributes listed in valied_attrs"""
+        """Updates the instance attributes listed in valid_attrs"""
         if len(args) > 0:
             for attr, value in zip(valid_attrs, args):
                 self.__setattr__(attr, value)
@@ -97,7 +97,9 @@ class Rectangle(Base):
 
         if kwargs is not None:
             for key, value in kwargs.items():
-                self.__setattr__(key, value)
+                # obviate non valid attrs
+                if key in valid_attrs:
+                    self.__setattr__(key, value)
 
     def update(self, *args, **kwargs):
         """Updates the listed instance attributes"""
