@@ -22,6 +22,11 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
+    def update(self, *args, **kwargs):
+        """Updates the listed instance attributes"""
+        valid_attrs = ['id', 'size', 'x', 'y']
+        self._protected_update(valid_attrs, *args, **kwargs)
+
     def __str__(self):
         return '[Square] ({:d}) {:d}/{:d} - {:d}'\
             .format(self.id, self.x, self.y, self.width)
