@@ -16,7 +16,8 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """"""
+        """Writes a json represetation of a list of dictianries
+        to a file"""
         list_dicts = []
         if list_objs is not None and len(list_objs) > 0:
             list_dicts = list(map(lambda el: el.to_dictionary(), list_objs))
