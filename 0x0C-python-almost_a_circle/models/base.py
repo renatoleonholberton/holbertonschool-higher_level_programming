@@ -27,6 +27,16 @@ class Base:
         with open(filename, mode='w', encoding='utf-8') as file:
             file.write(json_str)
 
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns a new instance with all attributes setted"""
+        if not issubclass(cls, Base):
+            return
+        # All init methods in derived classes take at least 2 args
+        new_instance = cls(1, 1)
+        new_instance.update(**dictionary)
+        return new_instance
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """Returns the JSON representation of a list dictionary"""
