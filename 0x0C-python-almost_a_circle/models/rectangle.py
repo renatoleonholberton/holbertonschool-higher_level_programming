@@ -88,7 +88,7 @@ class Rectangle(Base):
             print(' ' * self.x, end="")
             print('#' * self.width)
 
-    def __hidden_update(self, valid_attrs, *args, **kwargs):
+    def _protected_update(self, valid_attrs, *args, **kwargs):
         """Updates the instance attributes listed in valied_attrs"""
         if len(args) > 0:
             for attr, value in zip(valid_attrs, args):
@@ -102,7 +102,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Updates the listed instance attributes"""
         valid_attrs = ['id', 'width', 'height', 'x', 'y']
-        self.__hidden_update(valid_attrs, *args, **kwargs)
+        self._protected_update(valid_attrs, *args, **kwargs)
 
     def __str__(self):
         return '[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}'\
