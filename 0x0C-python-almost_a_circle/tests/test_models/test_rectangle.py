@@ -167,7 +167,7 @@ class Test_str(unittest.TestCase):
         r2 = Rectangle(5, 5, 1)
         r2_result = "[Rectangle] (1) 1/0 - 5/5"
         with patch('sys.stdout', new=StringIO()) as string:
-            self.assertEqual(draw.getvalue(), r2_result)
+            self.assertEqual(string.getvalue(), r2_result)
 
     def check_change_att(self):
         """check if print changed"""
