@@ -3,6 +3,7 @@
 test cases for square class
 """
 
+from models.rectangle import Rectangle
 import unittest
 import io
 import os
@@ -24,12 +25,10 @@ class testcases(unittest.TestCase):
         cls.c4 = Square(5, 6, 7)
         cls.c5 = Square(7, 8, 9, 10)
 
-    # def test_id(self):
-    #     self.assertEqual(self.c1.id, 1)
-    #     self.assertEqual(self.c2.id, 2)
-    #     self.assertEqual(self.c3.id, 3)
-    #     self.assertEqual(self.c4.id, 4)
-    #     self.assertEqual(self.c5.id, 10)
+    def test_id(self):
+        r1 = Rectangle(10, 20)
+        r2 = Rectangle(10, 20)
+        self.assertEqual(r1.id, r2.id - 1)
 
     def test_size(self):
         self.assertEqual(self.c1.size, 1)
