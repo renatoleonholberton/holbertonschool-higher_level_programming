@@ -28,12 +28,10 @@ class testcases(unittest.TestCase):
         cls.c4 = Square(5, 6, 7)
         cls.c5 = Square(7, 8, 9, 10)
     
-    # def test_id(self):
-        # self.assertEqual(self.c1.id, 1)
-        # self.assertEqual(self.c2.id, self.c1.id - 1)
-        # self.assertEqual(self.c3.id, self.c2.id - 1)
-        # self.assertEqual(self.c4.id, self.c3.id - 1)
-        # self.assertEqual(self.c5.id, 10)
+    def test_id(self):
+        sq1 = Square(1)
+        sq2 = Square(2)
+        self.assertEqual(sq1.id, sq2.id - 1)
 
     def test_size(self):
         self.assertEqual(self.c1.size, 1)
