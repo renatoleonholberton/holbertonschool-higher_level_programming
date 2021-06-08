@@ -48,9 +48,9 @@ class Base:
     def create(cls, **dictionary):
         """Returns a new instance with all attributes setted"""
         # default mandatory attrs for Square
-        attrs = tuple(1)
+        attrs = (1, )
         if cls.__name__ == 'Rectangle':
-            attrs = tuple(1, 1)
+            attrs = (1, 1)
 
         new_instance = cls(*attrs)
         new_instance.update(**dictionary)
