@@ -47,8 +47,6 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Returns a new instance with all attributes setted"""
-        if type(cls) is Base:
-            return
         # All init methods in derived classes take at least 2 args
         new_instance = cls(1, 1)
         new_instance.update(**dictionary)
