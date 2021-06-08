@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module of base class"""
 import os
+import csv
 import json
 
 
@@ -52,6 +53,46 @@ class Base:
         new_instance = cls(1, 1)
         new_instance.update(**dictionary)
         return new_instance
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Writes object attribute values to a file using csv
+        format"""
+        # default is Rectangle
+        valid_attrs = ['id', 'width', 'height', 'x', 'y']
+        if cls.__name__ == 'Square':
+            valid_attrs = ['id', 'size', 'x', 'y']
+
+        dicts_list = list(map(lambda obj: obj.to_dictionary(), list_objs))
+
+        filename = '{}.csv'.format(cls.__name__)
+        with open(filename, mode='w', encoding='utf-8') as file:
+            csv_writer = csv.DictWriter(file, fieldnames=valid_attrs)
+            csv_writer.writeheader()
+            csv_writer.writerows(dicts_list)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads object attribute values from a csv format file"""
+        filename = '{}.csv'.format(cls.__name__)
+        if not os.path.exists('./{}'.format(filename)):
+            return []
+
+        # default is Rectangle
+        valid_attrs = ['id', 'width', 'height', 'x', 'y']
+        if cls.__name__ == 'Square':
+            valid_attrs = ['id', 'size', 'x', 'y']
+
+        with open(filename, mode='r', encoding='utf-8', newline='') as file:
+            dicts_list = csv.DictReader(file, fieldnames=valid_attrs)
+            next(dicts_list)
+
+            return list(
+                map(
+                    lambda _dict: cls.create(
+                        **{key: int(val) for key, val in _dict.items()}
+                    ), list(dicts_list))
+                )
 
     @staticmethod
     def to_json_string(list_dictionaries):
