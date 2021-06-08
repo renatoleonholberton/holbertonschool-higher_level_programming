@@ -63,7 +63,7 @@ class TestBase(unittest.TestCase):
         Test to_json_string method
         """
         rect_instance = Rectangle(10, 17, 2, 8, 70)
-        rect_data = rect_instance.to_dictionary()
+        rect_data = re1.to_dictionary()
         json_data = Base.to_json_string([rect_data])
         self.assertEqual(type(json_data), str)
 
