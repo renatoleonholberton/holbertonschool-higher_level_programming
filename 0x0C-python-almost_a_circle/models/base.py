@@ -47,12 +47,14 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Returns a new instance with all attributes setted"""
-        # All init methods in derived classes take at least 2 args
-        if not dictionary:
-            return
+        # default mandatory attrs for Square
+        attrs = tuple(1)
+        if cls.__name__ == 'Rectangle':
+            attrs = tuple(1, 1)
 
-        new_instance = cls(1, 1)
+        new_instance = cls(*attrs)
         new_instance.update(**dictionary)
+
         return new_instance
 
     @classmethod
