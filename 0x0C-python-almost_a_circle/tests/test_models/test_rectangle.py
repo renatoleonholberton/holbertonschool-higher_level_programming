@@ -38,13 +38,13 @@ class Test_Rectangle_creation(unittest.TestCase):
         self.assertTrue(isinstance(r, Base))
         self.assertTrue(isinstance(r, Rectangle))
 
-    def test_id_default(self):
-        """Test for positive Base Class id"""
-        Base._Base__nb_objects = 0
-        r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 1)
-        r2 = Rectangle(2, 10)
-        self.assertEqual(r2.id, 2)
+    # def test_id_default(self):
+    #     """Test for positive Base Class id"""
+    #     Base._Base__nb_objects = 0
+    #     r1 = Rectangle(10, 2)
+    #     self.assertEqual(r1.id, 1)
+    #     r2 = Rectangle(2, 10)
+    #     self.assertEqual(r2.id, 2)
 
     def test_given_id(self):
         """Test fora given id"""
@@ -76,7 +76,7 @@ class Test_Rectangle_Attributes(unittest.TestCase):
 
     def test_input_not_integer(self):
         """Test if input is not an integer"""
-        with self.assertRaisesRegex(TypeError, "heigth must be an integer"):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             r1 = Rectangle(10, "2")
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             r2 = Rectangle(10, 2)
@@ -87,7 +87,7 @@ class Test_Rectangle_Attributes(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             r3 = Rectangle(10, 2)
             r3.width = -10
-        with self.assertRaisesRegex(ValueError, "heigth must be > 0"):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
             r4 = Rectangle(10, 5)
             r4.height = -10
 
@@ -162,7 +162,7 @@ class Test_str(unittest.TestCase):
             self.assertEqual(string.getvalue(), r1_result)
         r2 = Rectangle(5, 5, 1)
         r2_result = "[Rectangle] (1) 1/0 - 5/5"
-        with patch('sys.stdout', new = StringIO()) as string:
+        with patch('sys.stdout', new = StringIO()) as draw:
             self.assertEqual(draw.getvalue(), r2_result)
 
     def check_change_att(self):
