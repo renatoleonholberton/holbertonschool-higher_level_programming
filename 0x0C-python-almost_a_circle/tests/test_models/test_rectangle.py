@@ -58,6 +58,31 @@ class Test_Rectangle_creation(unittest.TestCase):
         with self.assertRaises(TypeError):
             r4 = Rectangle(1, 2, 3, 4, 5, 6, 7)
 
+class TestRectangle(unittest.TestCase):
+    """Test the functionality of the Rectangle class"""
+    @classmethod
+    def setUpClass(cls):
+        """"""
+        Base._Base__nb_objects = 0
+        cls.r1 = Rectangle(10, 10)
+        cls.r2 = Rectangle(2, 3, 4)
+        cls.r3 = Rectangle(5, 6, 7, 8, 9)
+        cls.r4 = Rectangle(11, 12, 13, 14)
+
+    def test_height_valueerror(self):
+        """Test ints <= 0 for height"""
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            r = Rectangle(1, -1)
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
+            r = Rectangle(1, 0)
+
+    def test_str(self):
+        """Test the str method"""
+        self.assertEqual(str(self.r1), "[Rectangle] (1) 0/0 - 10/10")
+        self.assertEqual(str(self.r2), "[Rectangle] (2) 4/0 - 2/3")
+        self.assertEqual(str(self.r3), "[Rectangle] (9) 7/8 - 5/6")
+        self.assertEqual(str(self.r4), "[Rectangle] (3) 13/14 - 11/12")
+
 
 class Test_Rectangle_Attributes(unittest.TestCase):
     """A class to test attributes of Rectangle Class"""
