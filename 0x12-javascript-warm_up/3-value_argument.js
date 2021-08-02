@@ -3,7 +3,7 @@
 const argv = require('process').argv;
 let msg = 'No argument';
 
-if (argv[2]) {
+if (typeof argv[2] !== 'undefined') {
   msg = argv[2];
 }
 
