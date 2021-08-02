@@ -5,10 +5,10 @@ let max = Number(argv[2]);
 let secMax = 0;
 
 if (argv.length > 3) {
-  for (const num of argv) {
-    if (Number(num) > max) {
+  for (let i = 3; i < argv.length; i++) {
+    if (Number(argv[i]) > max) {
       secMax = max;
-      max = Number(num);
+      max = Number(argv[i]);
     }
   }
 }
