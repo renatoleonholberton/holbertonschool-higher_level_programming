@@ -6,11 +6,13 @@ let secMax = 0;
 
 if (argv.length > 3) {
   for (let i = 3; i < argv.length; i++) {
-    if (Number(argv[i - 1]) > max) {
-      max = Number(argv[i - 1]);
-    }
-    if (Number(argv[i]) > secMax && Number(argv[i]) <= max) {
-      secMax = Number(argv[i]);
+    const num = Number(argv[i]);
+
+    if (num > max) {
+      secMax = max;
+      max = num;
+    } else if (num > secMax) {
+      secMax = num;
     }
   }
 }
