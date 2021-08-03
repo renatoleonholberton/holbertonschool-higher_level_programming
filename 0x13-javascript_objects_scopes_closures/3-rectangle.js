@@ -9,6 +9,10 @@ class Rectangle {
   }
 
   print () {
+    if (!this.width || !this.height) {
+      return;
+    }
+
     let row = '';
 
     for (let i = 0; i < this.width; i++) {
