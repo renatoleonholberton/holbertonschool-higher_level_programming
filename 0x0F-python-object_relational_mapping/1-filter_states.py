@@ -22,9 +22,8 @@ if __name__ == '__main__':
 
     c = db.cursor()
     c.execute(sql)
-
     states = c.fetchall()
-    for state in states:
-        print(state)
+    [print(state) for state in states]
+    c.close()
 
     db.close()
