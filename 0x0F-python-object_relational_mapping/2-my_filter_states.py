@@ -20,11 +20,10 @@ if __name__ == '__main__':
         ORDER BY id ASC
     """.format(state)
 
-    with db.cursor() as c:
-        c.execute(sql)
-
-        states = c.fetchall()
-        for st in states:
-            print(st)
+    c = db.cursor()
+    c.execute(sql)
+    states = c.fetchall()
+    [print(st) for st in states]
+    c.close()
 
     db.close()
