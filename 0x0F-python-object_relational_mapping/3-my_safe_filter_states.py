@@ -13,15 +13,19 @@ if __name__ == '__main__':
         port=3306,
         db=dbname)
 
+    state = state.replace("'", "")
+
     sql = """
         SELECT *
         FROM states
-    """
+        WHERE name = '{:s}'
+        ORDER BY id ASC
+    """.format(state)
 
     c = db.cursor()
     c.execute(sql)
     states = c.fetchall()
-    [print(st) for st in states if st[1] == state]
+    [print(st) for st in states]
     c.close()
 
     db.close()
