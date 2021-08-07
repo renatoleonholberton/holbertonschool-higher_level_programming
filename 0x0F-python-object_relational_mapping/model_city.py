@@ -11,7 +11,7 @@ Base = declarative_base()
 class City (Base):
     """ City class model definition """
 
-    __table_name__ = 'cities'
+    __tablename__ = 'cities'
 
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
