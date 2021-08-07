@@ -20,7 +20,7 @@ if __name__ == "__main__":
     session = Session()
 
     res = session.query(State, City)\
-        .join(City, State.id == City.state_id)\
+        .filter(State.id == City.state_id)\
         .order_by(City.id)\
         .all()
 
