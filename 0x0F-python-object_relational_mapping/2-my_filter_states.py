@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" This file connects to a db and executes a query  """
+""" This file connects to a db and executes a query """
 
 import MySQLdb
 from sys import argv
@@ -23,8 +23,8 @@ if __name__ == '__main__':
 
     c = db.cursor()
     c.execute(sql)
-    states = c.fetchall()
-    [print(st) for st in states]
+    res = c.fetchall()
+    [print(r) for r in res if r[1] == state]
     c.close()
 
     db.close()
