@@ -2,11 +2,12 @@
 """Script to print all city objects
 """
 import sys
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
 from relationship_state import State
 from relationship_city import Base, City
 
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     user, passwd, dbname = sys.argv[1:]

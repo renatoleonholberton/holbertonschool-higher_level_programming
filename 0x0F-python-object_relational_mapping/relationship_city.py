@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 """This module contains the declaration of City class model
 """
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.sql.schema import ForeignKey
 
 Base = declarative_base()
 
