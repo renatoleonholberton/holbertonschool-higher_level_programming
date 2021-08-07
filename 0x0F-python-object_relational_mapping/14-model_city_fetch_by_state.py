@@ -19,10 +19,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    res = session.query(State.name, City.id, City.name)\
+    res = session.query(State, City)\
         .join(City, State.id == City.state_id)\
         .order_by(City.id)\
         .all()
 
-    for r in res:
-        print('{}: ({}) {}'.format(*r))
+    for st, ct in res:
+        print('{}: ({}) {}'.format(st.name, ct.id, ct.name))
