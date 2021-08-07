@@ -17,14 +17,13 @@ if __name__ == '__main__':
     sql = """
         SELECT *
         FROM states
-        WHERE name LIKE 'N%'
         ORDER BY id ASC
     """
 
     c = db.cursor()
     c.execute(sql)
-    states = c.fetchall()
-    [print(state) for state in states]
+    res = c.fetchall()
+    [print(r) for r in res if r[1][0] == 'N']
     c.close()
 
     db.close()
