@@ -17,7 +17,7 @@ if __name__ == '__main__':
     sql = """
         SELECT *
         FROM states
-        WHERE SUBSTRING(name, 1, 1) = 'N'
+        WHERE name LIKE 'N%'
         ORDER BY id ASC
     """
 
