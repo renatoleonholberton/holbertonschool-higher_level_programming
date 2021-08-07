@@ -4,10 +4,10 @@
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
 
-from relationship_state import State
-from relationship_city import Base, City
-
+from relationship_state import Base, State
+from relationship_city import City
 
 if __name__ == "__main__":
     user, passwd, dbname = sys.argv[1:]
