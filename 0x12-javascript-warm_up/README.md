@@ -1,5 +1,16 @@
 # 0x12. JavaScript - Warm up
 
+**Install Node 10**
+```shell
+$ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+$ sudo apt-get install nodejs
+```
+
+**Install semi-standard**
+```shell
+$ sudo npm install semistandard --global
+```
+
 **Useful links**
 - [Writing JavaScript Code](https://intranet.hbtn.io/rltoken/OdMLtl6Y9mpQkaoEqJCRSg)
 - [Variables](https://intranet.hbtn.io/rltoken/iE6zaLw7pybp648IfRmk5Q)
