@@ -13,7 +13,7 @@ Write a Bash script that takes in a URL, sends a request to that URL, and displa
 - The size must be displayed in bytes
 - You have to use `curl`
 
-`File:` 0-body_size.sh
+`File:` [0-body_size.sh](0-body_size.sh)
 
 
 ## 1. cURL to the end
@@ -22,20 +22,20 @@ Write a Bash script that takes in a URL, sends a `GET` request to the URL, and d
 - Display `only` body of a `200` status code `response`
 - You have to use `curl`
 
-`File:` 1-body.sh
+`File:` [1-body.sh](1-body.sh)
 
 
 ## 2. cURL Method
 Write a Bash script that sends a `DELETE` request to the URL passed as the first argument and displays the body of the response
 
-`File:` 2-delete.sh
+`File:` [2-delete.sh](2-delete.sh)
 
 
 ## 3. cURL only methods
 
 Write a Bash script that takes in a URL and displays all `HTTP methods` the server will accept.
 
-`File:` 3-methods.sh
+`File:` [3-methods.sh](3-methods.sh)
 
 
 ## 4. cURL headers
@@ -44,7 +44,7 @@ Write a Bash script that takes in a URL as an argument, sends a GET request to t
 - A header variable `X-HolbertonSchool-User-Id` must be sent with the `value` `98`
 - You have to use `curl`
 
-`File:` 4-header.sh
+`File:` [4-header.sh](4-header.sh)
 
 
 ## 5. cURL POST parameters
@@ -54,7 +54,7 @@ Write a Bash script that takes in a URL, sends a POST request to the passed URL,
 - A variable subject must be sent with the value `I will always be here for PLD`
 - You have to use `curl`
 
-`File:` 5-post_params.sh
+`File:` [5-post_params.sh](5-post_params.sh)
 
 
 ## 6. Find a peak
@@ -68,7 +68,7 @@ Write a function that finds a peak in a list of unsorted integers.
 
 **Note:** there may be more than one peak in the list
 
-`File:` 6-peak.py, 6-peak.txt
+`File:` [6-peak.py, 6-peak.txt](6-peak.py, 6-peak.txt)
 
 
 ## 7. Only status code
@@ -78,7 +78,7 @@ Write a Bash script that sends a request to a URL passed as an argument, and dis
 - Not allowed to use `;` and `&&`
 - Have to use `curl`
 
-`File:` 100-status_code.sh
+`File:` [100-status_code.sh](100-status_code.sh)
 
 
 ## 8. cURL a JSON file
@@ -87,7 +87,7 @@ Write a Bash script that sends a `JSON POST` request to a URL passed as the firs
 - Your script must send a `POST` request with the `contents` of a `file`, passed with the `filename` as the `second argument` of the script, in the body of the request
 - You have to use `curl`
 
-`File:` 101-post_json.sh
+`File:` [101-post_json.sh](101-post_json.sh)
 
 
 ## 9. Catch me if you can!
@@ -102,4 +102,4 @@ You got me!
 $
 ```
 
-`File:` 102-catch_me.sh
+`File:` [102-catch_me.sh](102-catch_me.sh)
