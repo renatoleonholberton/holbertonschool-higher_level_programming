@@ -13,7 +13,7 @@ if __name__ == '__main__':
         dobj = res.json()
         text = 'No result'
         if dobj != {}:
-            text = '[{}] {}'.format(dobj['id'], dobj['name'])
+            text = '[{}] {}'.format(dobj.get('id'), dobj.get('name'))
         print(text)
     except ValueError:
         print('Not a valid JSON')
