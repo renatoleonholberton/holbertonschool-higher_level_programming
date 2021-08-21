@@ -1,7 +1,8 @@
 # 0x11. Python - Network #1
 
-In this project I practiced using python package to make HTTP requests to some URLs
+In this project I practiced using python packages to make HTTP requests to some URLs
 
+**Useful links**
 - [urllib package](https://docs.python.org/3/howto/urllib2.html)
 - [request HTTP library](https://docs.python-requests.org/en/master/)
 
